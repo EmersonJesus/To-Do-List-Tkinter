@@ -14,15 +14,17 @@ global contador
 contador = 0
 def executar():
     global contador
-    texto1 = 'Impar'
-    texto2 = 'Par'
+    texto1 = 'Impar: '
+    texto2 = 'Par: '
     
     if contador%2==0 :
-        print(texto2)
+        resultado = texto2 + str(contador)
+        label['text'] = resultado
+        label['fg'] = 'green'
     else:
-        print(texto1)
-    
-    print(contador)
+        resultado = texto1 + str(contador)
+        label['text'] = resultado
+        label['fg'] = 'red'
     contador += 1 
 
 label = Label(janela, width=20, height=2, text='Texto', relief='sunken', fg='white', bg=fundo)
