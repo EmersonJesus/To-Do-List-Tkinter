@@ -3,34 +3,33 @@ from tkinter import *
 fundo = '#242323'
 
 janela = Tk()
-janela.title('Botão')
-largura = 500
-altura = 250
+janela.title('Contador')
+largura = 300
+altura = 50
 janela.geometry(f'{str(largura)}x{str(altura)}')
 janela.config(bg=fundo)
 janela.resizable(width=False, height=False)
 
 global contador
 contador = 0
-def executar():
+def mais():
     global contador
-    texto1 = 'Impar: '
-    texto2 = 'Par: '
-    
-    if contador%2==0 :
-        resultado = texto2 + str(contador)
-        label['text'] = resultado
-        label['fg'] = 'green'
-    else:
-        resultado = texto1 + str(contador)
-        label['text'] = resultado
-        label['fg'] = 'red'
     contador += 1 
+    label['text'] =  str(contador)
 
-label = Label(janela, width=20, height=2, text='Texto', relief='sunken', fg='white', bg=fundo)
-label.grid(row=0, column=0, padx=largura//3, pady=10)
+def menos():
+    global contador
+    contador -= 1
+    label['text'] = str(contador)
+    
 
-botao = Button(janela, command=executar,width=10, height=2,text="Clica Aqui!", relief='raised', fg='white', bg='black')
-botao.place(x=largura//2.5, y=altura//2.5)
+label = Label(janela, width=20, height=1, text=str(contador), relief='sunken', fg='black', bg='white')
+label.grid(row=0, column=0)
+
+mais = Button(janela, command=mais,width=2, height=1,text="+", relief='raised', fg='white', bg='black')
+mais.grid(row=0, column=1)
+
+menos = Button(janela, command=menos,width=2, height=1,text="-", relief='raised', fg='white', bg='black')
+menos.grid(row=0, column=2)
 
 janela.mainloop()
