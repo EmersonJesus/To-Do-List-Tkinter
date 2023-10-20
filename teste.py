@@ -29,6 +29,11 @@ label_pais.grid(row=2, column=0)
 pais = Entry(janela, width=10, font=('Arial 10'))
 pais.grid(row=2, column=1, padx=10, pady=5)
 
+# Botão ---------------------------------------------------
+botao = Button(janela, width=10, text='Salvar Dados')
+botao.grid(row=3, column=1)
 
+# Dados -----------------------------------------------------
+res_nome
 
 janela.mainloop()
