@@ -11,6 +11,7 @@ janela.geometry(f'{str(largura)}x{str(altura)}')
 janela.config(bg=fundo)
 janela.resizable(width=False, height=False)
 
-frame = Frame(janela, width=200, height=200) 
+frame = Frame(janela, width=200, height=200)
+frame.grid(row=0, column=0) 
 
 janela.mainloop()
