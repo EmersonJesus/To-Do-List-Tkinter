@@ -12,6 +12,9 @@ janela.config(bg=fundo)
 janela.resizable(width=False, height=False)
 
 radio = Radiobutton(janela, text='Primeiro', value=1)
-radio.grid(row=0, column=0)
-
+radio.grid(row=0, column=0, padx=10, pady=10)
+radio2 = Radiobutton(janela, text='Segundo', value=1)
+radio2.grid(row=0, column=0, padx=10, pady=10)
+radio3 = Radiobutton(janela, text='Terceiro', value=1)
+radio3.grid(row=0, column=0, padx=10, pady=10)
 janela.mainloop()
