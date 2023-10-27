@@ -43,7 +43,11 @@ botao.place(x=300, y=0)
 frame1 = Frame(janela, bd=3, width=700, height=200, bg='#32405b')
 frame1.pack(pady=(160, 0))
 
-caixa_lista = Listbox(frame1, font=('arial', 12), width=40, height=16, bg='#32405b')
+caixa_lista = Listbox(frame1, font=('arial', 12), width=40, height=16, bg='#32405b', fg='white', cursor='hand2', selectbackground='#5a95ff')
 caixa_lista.pack(side=LEFT, fill=BOTH, padx=2)
+barra_rolagem = Scrollbar(frame1)
+barra_rolagem.pack(side=RIGTH , fill=BOTH)
+caixa_lista.config(yscrollcommand=barra_rolagem.set)
+barra_rolagem.config(command=caixa_lista.yview)
 
 janela.mainloop()
