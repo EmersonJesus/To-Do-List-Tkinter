@@ -1,17 +1,5 @@
-from tkinter import *
-from tkinter.ttk import *
+from customtkinter import *
 
-fundo = '#242323'
-
-janela = Tk()
-janela.title('RadioButton')
-largura = 400
-altura = 400
-janela.geometry(f'{str(largura)}x{str(altura)}')
-janela.config(bg=fundo)
-janela.resizable(width=False, height=False)
-
-frame = Frame(janela, width=200, height=200)
-frame.grid(row=0, column=0) 
-
+janela = Ctk()
+janela._set_apparence_mode('light')
 janela.mainloop()
