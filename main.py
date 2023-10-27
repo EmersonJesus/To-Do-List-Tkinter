@@ -46,8 +46,12 @@ frame1.pack(pady=(160, 0))
 caixa_lista = Listbox(frame1, font=('arial', 12), width=40, height=16, bg='#32405b', fg='white', cursor='hand2', selectbackground='#5a95ff')
 caixa_lista.pack(side=LEFT, fill=BOTH, padx=2)
 barra_rolagem = Scrollbar(frame1)
-barra_rolagem.pack(side=RIGTH , fill=BOTH)
+barra_rolagem.pack(side=RIGHT , fill=BOTH)
 caixa_lista.config(yscrollcommand=barra_rolagem.set)
 barra_rolagem.config(command=caixa_lista.yview)
+
+# Deletar --------------
+img_del = PhotoImage(file='imagens/delete.png')
+Button(janela, image=img_del, bd=0).pack(side=BOTTOM, pady=13)
 
 janela.mainloop()
