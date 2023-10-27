@@ -13,6 +13,7 @@ img_icone = PhotoImage(file='imagens/task.png')
 root.iconphoto(False, img_icone)
 
 # Barra topo ---------------
+img_topo = PhotoImage(file='imagens/dock.png')
 
 
 root.mainloop()
