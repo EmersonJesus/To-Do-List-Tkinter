@@ -12,5 +12,7 @@ lista_tarefas = []
 img_icone = PhotoImage(file='imagens/task.png')
 root.iconphoto(False, img_icone)
 
+# Barra topo ---------------
+
 
 root.mainloop()
