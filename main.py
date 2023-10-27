@@ -28,11 +28,22 @@ cabecalho = Label(janela, text='TODAS AS TAREFAS', font='arial 20 bold', fg='whi
 cabecalho.place(x=60, y=20)
 
 # Main ---------------------
-frame = Frame(janela, width=400, heigth=50, bg='white')
+frame = Frame(janela, width=400, height=50, bg='white')
 frame.place(x=0, y=188)
 
 tarefa = StringVar()
 tarefa_entrada = Entry(frame, width=18, font='arial 20', bd=0)
 tarefa_entrada.place(x=10, y=7)
+tarefa_entrada.focus
+
+botao = Button(frame, text='ADD', font='arial 20 bold', width=6, bg='#5a95ff', fg='#fff', bd=0)
+botao.place(x=300, y=0)
+
+# Caixa de lista --------------------
+frame1 = Frame(janela, bd=3, width=700, height=200, bg='#32405b')
+frame1.pack(pady=(160, 0))
+
+caixa_lista = Listbox(frame1, font=('arial', 12), width=40, height=16, bg='#32405b')
+caixa_lista.pack(side=LEFT, fill=BOTH, padx=2)
 
 janela.mainloop()
