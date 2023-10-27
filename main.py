@@ -1,19 +1,30 @@
 import tkinter
 from tkinter import *
 
-root = Tk()
-root.title("To-Do-List")
-root.geometry("400x650+400+100")
-root.resizable(False, False)
+janela = Tk()
+janela.title("To-Do-List")
+janela.geometry("400x650+400+100")
+janela.resizable(False, False)
 
 lista_tarefas = []
 
 # Icone -------------------
 img_icone = PhotoImage(file='imagens/task.png')
-root.iconphoto(False, img_icone)
+janela.iconphoto(False, img_icone)
 
 # Barra topo ---------------
-img_topo = PhotoImage(file='imagens/dock.png')
+img_topo = PhotoImage(file='imagens/topbar.png')
+Label(janela, image=img_topo).pack()
 
+img_dock = PhotoImage(file='imagens/dock.png')
+Label(janela, image=img_dock, bg='#32405b').place(x=30, y=25)
 
-root.mainloop()
+# Caderno -----------------
+img_caderno = PhotoImage(file='imagens/task.png')
+Label(janela, image=img_caderno, bg='#32405b').place(x=30, y=25)
+
+# Cabeçalho ---------------
+cabecalho = Label(janela, text='TODAS AS TAREFAS', font='arial 20 bold', fg='white', bg='#32405b')
+cabecalho.place(x=90, y=20)
+
+janela.mainloop()
