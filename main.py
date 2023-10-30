@@ -18,6 +18,16 @@ def adicionar_tarefa():
         lista_tarefas.append(tarefa)
         caixa_lista.insert(END, tarefa)
     
+def deletar_tarefa():
+    tarefa = str(caixa_lista.get(ANCHOR))
+    if tarefa in lista_tarefas:
+        lista_tarefas.remove(tarefa)
+        with open('tarefas.txt', 'w') as arq_tarefas:
+            for tarefa in lista_tarefas:
+                arq_tarefas.write(tarefa+'\n')
+            
+        caixa_lista.delete(ANCHOR)    
+
 def abrir_arqtarefa():
     try:
         global lista_tarefas
@@ -79,6 +89,6 @@ abrir_arqtarefa()
 
 # Deletar --------------
 img_del = PhotoImage(file='imagens/delete.png')
-Button(janela, image=img_del, bd=0).pack(side=BOTTOM, pady=13)
+Button(janela, image=img_del, bd=0, command=deletar_tarefa).pack(side=BOTTOM, pady=13)
 
 janela.mainloop()
