@@ -8,6 +8,15 @@ janela.resizable(False, False)
 
 lista_tarefas = []
 
+def abrir_arqtarefa():
+    with open('tarefas.txt', 'r') as arq_tarefa:
+        tarefas = arq_tarefa.readlines()
+    
+    for tarefa in tarefas:
+        if tarefa != '\n':
+            lista_tarefas.append(tarefa)
+            caixa_lista.insert(END, tarefa)
+
 # Icone -------------------
 img_icone = PhotoImage(file='imagens/task.png')
 janela.iconphoto(False, img_icone)
