@@ -8,14 +8,31 @@ janela.resizable(False, False)
 
 lista_tarefas = []
 
-def abrir_arqtarefa():
-    with open('tarefas.txt', 'r') as arq_tarefa:
-        tarefas = arq_tarefa.readlines()
+def adicionar_tarefa():
+    tarefa = tarefa_entrada.get()
+    tarefa_entrada.delete(0, END)
     
-    for tarefa in tarefas:
-        if tarefa != '\n':
-            lista_tarefas.append(tarefa)
-            caixa_lista.insert(END, tarefa)
+    if tarefa:
+        with open('tarefas.txt', 'a') as arq_tarefas:
+            arq_tarefas.write(f'\n{tarefa}')
+        lista_tarefas.append(tarefa)
+        caixa_lista.insert(END, tarefa)
+    
+def abrir_arqtarefa():
+    try:
+        global lista_tarefas
+        with open('tarefas.txt', 'r') as arq_tarefa:
+            tarefas = arq_tarefa.readlines()
+        
+        for tarefa in tarefas:
+            if tarefa != '\n':
+                lista_tarefas.append(tarefa)
+                caixa_lista.insert(END, tarefa)
+                
+    except:
+        arq = open('tarefas.txt', 'w')
+        arq.close()
+
 
 # Icone -------------------
 img_icone = PhotoImage(file='imagens/task.png')
@@ -45,7 +62,7 @@ tarefa_entrada = Entry(frame, width=18, font='arial 20', bd=0)
 tarefa_entrada.place(x=10, y=7)
 tarefa_entrada.focus
 
-botao = Button(frame, text='ADD', font='arial 20 bold', width=6, bg='#5a95ff', fg='#fff', bd=0)
+botao = Button(frame, text='ADD', font='arial 20 bold', width=6, bg='#5a95ff', fg='#fff', bd=0, command=adicionar_tarefa)
 botao.place(x=300, y=0)
 
 # Caixa de lista --------------------
@@ -58,6 +75,7 @@ barra_rolagem = Scrollbar(frame1)
 barra_rolagem.pack(side=RIGHT , fill=BOTH)
 caixa_lista.config(yscrollcommand=barra_rolagem.set)
 barra_rolagem.config(command=caixa_lista.yview)
+abrir_arqtarefa()
 
 # Deletar --------------
 img_del = PhotoImage(file='imagens/delete.png')
