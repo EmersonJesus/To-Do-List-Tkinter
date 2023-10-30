@@ -13,10 +13,13 @@ def adicionar_tarefa():
     tarefa_entrada.delete(0, END)
     
     if tarefa:
-        with open('tarefas.txt', 'a') as arq_tarefas:
-            arq_tarefas.write(f'\n{tarefa}')
-        lista_tarefas.append(tarefa)
-        caixa_lista.insert(END, tarefa)
+        if tarefa not in lista_tarefas:
+            with open('tarefas.txt', 'a') as arq_tarefas:
+                arq_tarefas.write(f'\n{tarefa}')
+            lista_tarefas.append(tarefa)
+            caixa_lista.insert(END, tarefa)
+        else:
+            print('tarefa já existe')
     
 def deletar_tarefa():
     tarefa = str(caixa_lista.get(ANCHOR))
@@ -64,15 +67,15 @@ cabecalho = Label(janela, text='TODAS AS TAREFAS', font='arial 20 bold', fg='whi
 cabecalho.place(x=60, y=20)
 
 # Main ---------------------
-frame = Frame(janela, width=400, height=50, bg='white')
-frame.place(x=0, y=188)
+frame = Frame(janela, width=400, height=40, bg='white')
+frame.place(x=0, y=198)
 
 tarefa = StringVar()
-tarefa_entrada = Entry(frame, width=18, font='arial 20', bd=0)
-tarefa_entrada.place(x=10, y=7)
+tarefa_entrada = Entry(frame, width=19, font='arial 20', bd=0)
+tarefa_entrada.place(x=4, y=4)
 tarefa_entrada.focus
 
-botao = Button(frame, text='ADD', font='arial 20 bold', width=6, bg='#5a95ff', fg='#fff', bd=0, command=adicionar_tarefa)
+botao = Button(frame, text='+', font='arial 20 bold', width=6, bg='#5a95ff', fg='#fff', bd=0, command=adicionar_tarefa)
 botao.place(x=300, y=0)
 
 # Caixa de lista --------------------
