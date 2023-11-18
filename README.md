@@ -1,6 +1,7 @@
 # To-Do-List em Tkinter
  
 Este é um simples aplicativo To-Do-List desenvolvido em Python usando a biblioteca Tkinter. O aplicativo permite que você adicione e exclua tarefas de uma lista, além de salvar suas tarefas em um arquivo local.
+
 Funcionalidades Principais
 
     Adicionar Tarefa: Insira uma tarefa na caixa de entrada e clique no botão "+" para adicioná-la à lista.
