@@ -16,7 +16,7 @@ Nenhuma instalação adicional é necessária além do Python. Basta clonar ou b
 
 Capturas de Tela
 
-![Captura de Tela 1](https://i.imgur.com/Dn3zxL3.png)
+![Captura de Tela 1](https://i.imgur.com/Rcx9d1O.png)
 
 Contribuição
 
