@@ -16,8 +16,11 @@ Nenhuma instalação adicional é necessária além do Python. Basta clonar ou b
 
 Capturas de Tela
 
-[Inserir capturas de tela do aplicativo em funcionamento, se aplicável]
+![Captura de Tela 1](https://i.imgur.com/Dn3zxL3.png)
 
 Contribuição
 
 Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas funcionalidades. Basta abrir uma issue ou enviar um pull request.
+
+
+Criado por [Emerson Jesus](https://github.com/EmersonJesus).
